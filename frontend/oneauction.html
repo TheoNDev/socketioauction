@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="./src/style.css" />
+    <script type="module" src="./src/room.ts" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <section>
+        <h1 id="auction_title"></h1>
+      </section>
+      <section>
+        <p>Nuvarande bud: <span id="bid"></span> kr</p>
+        <p>Högsta budgivate: <span id="bidder"></span></p>
+      </section>
+      <section>
+        <form id="bidForm">
+          <input type="text" id="bidderInput" placeholder="Ditt Namn" />
+          <input type="number" id="bidInput" placeholder="Ditt bud" />
+          <button type="submit">Skicka in bud</button>
+        </form>
+      </section>
+    </div>
+  </body>
+</html>
