@@ -47,19 +47,15 @@ async function setBid(bid: number, bidder: string) {
   });
 }
 
-const bidForm = document.getElementById("bidForm");
-if (bidForm) {
-  const bidInput = document.getElementById("bidInput") as HTMLInputElement;
-  const bidderInput = document.getElementById(
-    "bidderInput"
-  ) as HTMLInputElement;
-  bidForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    setBid(bidInput.valueAsNumber, bidderInput.value);
-    bidInput.value = "";
-    bidderInput.value = "";
-  });
-}
+const bidForm = document.getElementById("bidForm") as HTMLFormElement;
+const bidInput = document.getElementById("bidInput") as HTMLInputElement;
+const bidderInput = document.getElementById("bidderInput") as HTMLInputElement;
+bidForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  setBid(bidInput.valueAsNumber, bidderInput.value);
+  bidInput.value = "";
+  bidderInput.value = "";
+});
 
 async function getAuction(): Promise<Auction> {
   return fetch("http://localhost:3000/api/auctions/" + currentRoom)
